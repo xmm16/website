@@ -1,5 +1,60 @@
 @import "normalize.css";
 
+:root {
+  background-color: #11151c;
+}
+
 * {
   font-family: monospace;
+  text-rendering: geometricPrecision;
+  shape-rendering: geometricPrecision;
+  image-rendering: optimizeQuality;
+  font-variant-ligatures: normal;
+  font-size: 18px;
+}
+
+#content {
+  color: white;
+  align-content: center;
+  text-align: center;
+}
+
+a {
+  color: white;
+}
+
+#breadcrumb {
+  padding: 1rem;
+  color: #fbfbff;
+  background-color: #364156;
+}
+
+#breadcrumb ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#breadcrumb li:not(:last-child)::after {
+  display: inline-block;
+  margin: 0 0.25rem;
+  content: "|";
+}
+
+.page-header,
+.page-footer {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.page-body {
+  flex-grow: 1;
+}
+
+#wrapper {
+  box-sizing: border-box;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }

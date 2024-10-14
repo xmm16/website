@@ -5,11 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="XN" />
     <meta name="description" content="Personal Website" />
-    <meta name="theme-color" content="#000000" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#11151c"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>XN</title>
   </head>
   <body>
-    <p>hello</p>
+    <div id="wrapper">
+      <header class="page-header">
+        <nav aria-label="breadcrumb" id="breadcrumb">
+          <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">PROJECTS (WIP)</a></li>
+            <li><a href="#">BLOGS (WIP)</a></li>
+            <li><a href="#">CONTACTS (WIP)</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main class="page-body">
+        <div id="content">
+          <p>Security Researcher, GNU/Linux user</p>
+          <h2>Projects</h2>
+          <sub>This will get moved to it's own PROJECTS page</sub>
+          <p>
+            <a href="https://github.com/64XN/genpasswd">genpasswd</a>
+            <a href="#">Website</a>
+          </p>
+        </div>
+      </main>
+      <footer id="content" class="page-footer">
+        Licensed under
+        <a
+          href="https://raw.githubusercontent.com/64XN/portfolio/refs/heads/main/LICENSE"
+          >MIT</a
+        >
+      </footer>
+    </div>
   </body>
 </html>
