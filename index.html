@@ -1,44 +1,85 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="xmm16" />
-    <meta name="description" content="Personal Website" />
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: dark)"
-      content="#11151c"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>XMM16!</title>
-  </head>
-  <body>
-    <div id="wrapper">
-      <header class="page-header">
-        <nav aria-label="breadcrumb" id="breadcrumb">
-          <h1>XMM16!</h1>
-        </nav>
-      </header>
-      <main class="page-body">
-        <div id="content">
-          <h2>About</h2>
-          <p>Security Researcher, Chimera Linux user</p>
-          <h2>Projects</h2>
-          <p>
-            <a href="https://github.com/xmm16/genpasswd">genpasswd</a>
-          </p>
-          <h2>Contact me!</h2>
-          <a rel="me" href="https://hachyderm.io/@xmm">Mastodon</a>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="xmm16" />
+        <meta name="description" content="Personal Website" />
+        <meta
+            name="theme-color"
+            media="(prefers-color-scheme: dark)"
+            content="#11151c"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <title>XMM16!</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header class="page-header">
+                <nav aria-label="breadcrumb" id="breadcrumb">
+                    <h1>XMM16!</h1>
+                </nav>
+            </header>
+            <main class="page-body">
+                <div id="content">
+                    <h2>About</h2>
+                    <p>Security Researcher, Chimera Linux user</p>
+                    <h2>Projects</h2>
+                    <p>
+                        <a href="https://github.com/xmm16/genpasswd"
+                            >genpasswd</a
+                        >
+                    </p>
+                    <h2>Contact me!</h2>
+                    <a rel="me" href="https://hachyderm.io/@xmm">Mastodon</a>
+                </div>
+            </main>
+            <footer id="content" class="page-footer">
+                Licensed under
+                <a
+                    href="https://raw.githubusercontent.com/64XN/portfolio/refs/heads/main/LICENSE"
+                    >MIT</a
+                >
+            </footer>
+            <button id="catButton">Cat button</button>
+            <div id="loading">Loading...</div>
+            <img id="catImage" alt="Cat" />
+            <div id="emoji">👅</div>
         </div>
-      </main>
-      <footer id="content" class="page-footer">
-        Licensed under
-        <a
-          href="https://raw.githubusercontent.com/64XN/portfolio/refs/heads/main/LICENSE"
-          >MIT</a
-        >
-      </footer>
-    </div>
-  </body>
+
+        <script>
+            document
+                .getElementById("catButton")
+                .addEventListener("click", async () => {
+                    const loadingText = document.getElementById("loading");
+                    const catImage = document.getElementById("catImage");
+                    const emoji = document.getElementById("emoji");
+
+                    loadingText.style.display = "block";
+                    emoji.style.opacity = 0;
+
+                    try {
+                        const response = await fetch("https://cataas.com/cat");
+                        const blob = await response.blob();
+                        const url = URL.createObjectURL(blob);
+
+                        catImage.src = url;
+                        catImage.style.display = "block";
+                        catImage.onload = () => {
+                            loadingText.style.display = "none";
+                            emoji.style.opacity = 1;
+                            setTimeout(() => {
+                                emoji.style.opacity = 0;
+                            }, 1000);
+                        };
+                    } catch (error) {
+                        loadingText.textContent = "Failed to load cat.";
+                        setTimeout(() => {
+                            loadingText.style.display = "none";
+                        }, 2000);
+                    }
+                });
+        </script>
+    </body>
 </html>
+
