@@ -4,20 +4,35 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="xmm" />
-    <meta name="description" content="Segmentation fault" />
+    <meta id="yap2" name="description" content="Segmentation fault" />
     <meta
       name="theme-color"
       media="(prefers-color-scheme: dark)"
       content="#11151c"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>who's at fault?</title>
+    <title id="yap">NoScript Title</title>
+    <script>
+      // Thanks random StackOverflow user
+      function dec2hex(dec) {
+        return dec.toString(36).padStart(2, "0");
+      }
+
+      // generateId :: Integer -> String
+      function generateId(len) {
+        var arr = new Uint8Array((len || 40) / 2);
+        window.crypto.getRandomValues(arr);
+        return Array.from(arr, dec2hex).join("");
+      }
+      document.getElementById("yap").innerHTML = generateId();
+      document.getElementById("yap2").innerHTML = generateId();
+    </script>
   </head>
   <body>
     <div id="wrapper">
       <header class="page-header">
         <nav aria-label="breadcrumb" id="breadcrumb">
-          <h2>o</h2>
+          <h2 id="fnnuy">NoScript Nav</h2>
         </nav>
       </header>
       <main class="page-body">
@@ -89,11 +104,7 @@
         window.crypto.getRandomValues(arr);
         return Array.from(arr, dec2hex).join("");
       }
-      document.body.innerHTML = document.body.innerHTML.replace(
-        /o/,
-        generateId(),
-      );
-      console.log("ID Generated:", generateId());
+      document.getElementById("fnnuy").innerHTML = generateId();
     </script>
   </body>
 </html>
