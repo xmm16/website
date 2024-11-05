@@ -4,35 +4,27 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="xmm" />
-    <meta id="yap2" name="description" content="Segmentation fault" />
+    <meta
+      name="description"
+      content="Program received signal SIGSEGV, Segmentation fault. Other than that, here I host my projects."
+    />
     <meta
       name="theme-color"
       media="(prefers-color-scheme: dark)"
       content="#11151c"
     />
     <link rel="stylesheet" href="style.css" />
-    <title id="yap">NoScript Title</title>
-    <script>
-      // Thanks random StackOverflow user
-      function dec2hex(dec) {
-        return dec.toString(36).padStart(2, "0");
-      }
-
-      // generateId :: Integer -> String
-      function generateId(len) {
-        var arr = new Uint8Array((len || 40) / 2);
-        window.crypto.getRandomValues(arr);
-        return Array.from(arr, dec2hex).join("");
-      }
-      document.getElementById("yap").innerHTML = generateId();
-      document.getElementById("yap2").innerHTML = generateId();
-    </script>
+    <title>SIGSEGV</title>
   </head>
   <body>
     <div id="wrapper">
       <header class="page-header">
         <nav aria-label="breadcrumb" id="breadcrumb">
-          <h2 id="fnnuy">NoScript Nav</h2>
+          <noscript>
+            <h2 id="random">
+              NoScript doesn't allow JavaScript so no randomized text for you :P
+            </h2>
+          </noscript>
         </nav>
       </header>
       <main class="page-body">
@@ -104,7 +96,7 @@
         window.crypto.getRandomValues(arr);
         return Array.from(arr, dec2hex).join("");
       }
-      document.getElementById("fnnuy").innerHTML = generateId();
+      document.getElementById("random").innerHTML = generateId();
     </script>
   </body>
 </html>
