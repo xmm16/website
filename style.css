@@ -13,6 +13,10 @@
   font-size: 24px;
 }
 
+#warning {
+  color: #ff6f00;
+}
+
 #content {
   padding: 5rem;
   color: white;
