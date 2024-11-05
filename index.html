@@ -17,7 +17,7 @@
     <div id="wrapper">
       <header class="page-header">
         <nav aria-label="breadcrumb" id="breadcrumb">
-          <h2>78/6D/6D/31/36 - xmm is at fault?</h2>
+          <h2>o</h2>
         </nav>
       </header>
       <main class="page-body">
@@ -30,15 +30,15 @@
           </p>
           <h2>Contact me!</h2>
           <a rel="me" href="https://hachyderm.io/@xmm">Mastodon</a>
+          <footer class="page-footer">
+            Licensed under
+            <a
+              href="https://raw.githubusercontent.com/xmm16/portfolio/refs/heads/main/LICENSE"
+              >MIT</a
+            >
+          </footer>
         </div>
       </main>
-      <footer id="content" class="page-footer">
-        Licensed under
-        <a
-          href="https://raw.githubusercontent.com/xmm16/portfolio/refs/heads/main/LICENSE"
-          >MIT</a
-        >
-      </footer>
       <button id="catButton">Cat button</button>
       <div id="loading">Loading...</div>
       <img id="catImage" alt="Cat" />
@@ -77,6 +77,23 @@
             }, 2000);
           }
         });
+
+      // Thanks random StackOverflow user
+      function dec2hex(dec) {
+        return dec.toString(36).padStart(2, "0");
+      }
+
+      // generateId :: Integer -> String
+      function generateId(len) {
+        var arr = new Uint8Array((len || 40) / 2);
+        window.crypto.getRandomValues(arr);
+        return Array.from(arr, dec2hex).join("");
+      }
+      document.body.innerHTML = document.body.innerHTML.replace(
+        /o/,
+        generateId(),
+      );
+      console.log("ID Generated:", generateId());
     </script>
   </body>
 </html>
